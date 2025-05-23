@@ -87,7 +87,7 @@ export const Test = () => {
                 
                 <p>
                   When I'm not hunching into my laptop screen, I stay active through gym workouts and 
-                  intramural sports, I enjoy watching and talking about Formula 1 racing, and discovering new music.
+                  intramural sports, I enjoy watching and talking about Formula 1 racing on TheOversteerPodcast, and discovering new music.
                 </p>
               </div>
 
@@ -138,7 +138,7 @@ export const Test = () => {
                   <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
                     🏎️
                   </div>
-                  <h3 className="tech-center text-xl font-bold text-white">F1 Enthusiast</h3>
+                  <h3 className="tech-center text-xl font-bold text-white">Co-Host of TheOversteerPodcast.</h3>
                 </div>
                 
                 <div className="flex-1 flex flex-col">
@@ -279,7 +279,7 @@ export const Test = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-white">Intramural Sports</h3>
-                  <p className="text-gray-400 text-sm">Soccer, Basketball & Volleyball • McMaster University</p>
+                  <p className="text-gray-400 text-sm">Captain of a cricket intramural team @McMaster University.</p>
                 </div>
               </div>
             </div>
