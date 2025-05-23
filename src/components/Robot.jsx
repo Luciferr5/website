@@ -23,8 +23,12 @@ export const Robot = () => {
         style={{
           width: '100%',
           height: '100%',
-          border: 'none'
+          border: 'none',
+          background: 'transparent'
         }}
+        // Hide Spline logo and loading screen
+        loading-anim="false"
+        logo="false"
       />
     </div>
   );
