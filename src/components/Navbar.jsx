@@ -29,7 +29,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             </a>
 
             <a
-              href="#about"
+              href="#test"
               className="text-white hover:text-transparent transition-colors duration-500 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text"
             >
               {" "}

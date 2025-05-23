@@ -3,9 +3,9 @@ import './App.css';
 import {LoadingScreen} from "./components/LoadingScreen";
 import {Navbar} from "./components/Navbar";
 import {MobileMenu} from "./components/MobileMenu";
-// import {Home} from "./components/sections/Home";
+import {Test} from "./components/sections/Test";
 import {Home} from "./components/sections/home";
-import {About} from "./components/sections/about"
+// import {About} from "./components/sections/about"
 import {Projects} from "./components/sections/projects"
 import { Contact } from "./components/sections/contact";
 import "./index.css";
@@ -26,7 +26,8 @@ function App() {
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home/>
-        <About/>
+        <Test/>
+        {/* <About/> */}
         <Projects/>
         <Contact/>
 
