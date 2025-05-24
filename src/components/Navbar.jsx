@@ -43,7 +43,7 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
               Projects{" "}
             </a>
             <a
-              href="#contact"
+              href="mailto:prakharsaxena5@outlook.com?subject=Hello%20Prakhar&body=Hi%20Prakhar,%0A%0AI%20came%20across%20your%20website%20and%20would%20love%20to%20connect!%0A%0ABest%20regards"
               className="text-white hover:text-transparent transition-colors duration-500 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text"
             >
               {" "}

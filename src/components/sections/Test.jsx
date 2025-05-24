@@ -67,7 +67,7 @@ export const Test = () => {
                 in molecular analysis as a Machine Learning Research Assistant at McMaster University. 
                 You can view my resume{" "}
                 <a 
-                  href="/Resume-7.pdf" 
+                  href="/Resume-8.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-blue-400 hover:text-blue-300 underline transition-colors inline-flex items-center gap-1"
@@ -278,7 +278,7 @@ export const Test = () => {
                   ⚽
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">Intramural Sports</h3>
+                  <h3 className="text-lg font-bold text-white">Sports</h3>
                   <p className="text-gray-400 text-sm">Captain of a cricket intramural team @McMaster University.</p>
                 </div>
               </div>

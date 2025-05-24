@@ -57,34 +57,4 @@ spline-viewer::part(logo) {
 spline-viewer .spline-watermark,
 spline-viewer .logo {
   display: none !important;
-
-/* Add this to your existing index.css file */
-
-/* Hide any additional Spline watermarks on background */
-.spline-background spline-viewer::part(logo),
-.spline-background spline-viewer::part(watermark) {
-  display: none !important;
-  visibility: hidden !important;
 }
-
-/* Aggressive watermark hiding for all Spline viewers */
-spline-viewer::part(logo),
-spline-viewer::part(watermark),
-spline-viewer .spline-watermark,
-spline-viewer .logo {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-}
-
-/* Hide any divs that might contain watermarks */
-spline-viewer div[style*="position: absolute"][style*="bottom"][style*="right"] {
-  display: none !important;
-}
-
-/* Ensure proper layering */
-.main-content {
-  position: relative;
-  z-index: 10;
-}}

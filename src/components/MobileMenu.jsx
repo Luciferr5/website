@@ -35,7 +35,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         Home
       </a>
       <a
-        href="#about"
+        href="#test"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -57,7 +57,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         Projects
       </a>
       <a
-        href="#contact"
+        href="mailto:prakharsaxena5@outlook.com?subject=Hello%20Prakhar&body=Hi%20Prakhar,%0A%0AI%20came%20across%20your%20website%20and%20would%20love%20to%20connect!%0A%0ABest%20regards"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
