@@ -1,7 +1,7 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { SpotifyPlayer } from "../Spotify";
 import profilePic from "../../images/IMG_2811.JPG";
-import stocksImage from "../../images/stocks.jpg";
+import stocksImage from "../../images/stocks.JPG";
 
 export const Test = () => {
   const frontendSkills = [
