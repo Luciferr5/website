@@ -1,7 +1,7 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { SpotifyPlayer } from "../Spotify";
 import profilePic from "../../images/IMG_2811.JPG";
-import stocksImage from "../../images/stocks.JPG";
+import stocksImage from "../../images/stocks.jpg";
 
 export const Test = () => {
   const frontendSkills = [
@@ -17,10 +17,10 @@ export const Test = () => {
   return (
     <section
       id="test"
-      className="min-h-screen py-20"
+      className="py-20 pb-32"
     >
-      <RevealOnScroll>
-        <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4">
+        <RevealOnScroll>
           <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent text-center">
             Life outside tech.
           </h2>
@@ -90,11 +90,11 @@ export const Test = () => {
             </div>
           </div>
 
-          {/* NEW: Reorganized 4-Section Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-auto lg:h-[600px]">
+          {/* 4-Section Grid - Removed height constraints */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 auto-rows-auto">
             
             {/* F1 Podcast - Top Left */}
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-b from-red-500/10 to-orange-500/10 hover:border-red-500/30">
+            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-b from-red-500/10 to-orange-500/10 hover:border-red-500/30 min-h-[400px]">
               <div className="h-full flex flex-col">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
@@ -105,8 +105,8 @@ export const Test = () => {
                 
                 {/* Description */}
                 <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                I'm a very outgoing and extroverted person, which helps me connect with new people and confidently 
-                share the things I'm passionate about. Catch a glimpse below 👇🏻.
+                  Weekly F1 analysis covering race strategies, driver performances, and season predictions. 
+                  Deep dives into the technical and strategic aspects of Formula 1 racing with expert insights.
                 </p>
                 
                 {/* YouTube Preview */}
@@ -153,12 +153,12 @@ export const Test = () => {
             </div>
 
             {/* Music Player - Top Right */}
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-br from-green-500/10 to-blue-500/10 hover:border-green-500/30">
+            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-br from-green-500/10 to-blue-500/10 hover:border-green-500/30 min-h-[400px]">
               <SpotifyPlayer />
             </div>
 
             {/* Stock Portfolio - Bottom Left */}
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-br from-green-600/10 to-emerald-500/10 hover:border-green-500/30">
+            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-br from-green-600/10 to-emerald-500/10 hover:border-green-500/30 min-h-[400px]">
               <div className="h-full flex flex-col">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
@@ -169,8 +169,8 @@ export const Test = () => {
                 
                 {/* Description */}
                 <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                  Active investor tracking market trends and building a diversified portfolio. 
-                  Focused on growth stocks, tech companies, and emerging market opportunities with data-driven investment strategies.
+                I've understood the importance of passive income early on, so I make sure to keep up with market 
+                trends and actively invest in building a diversified portfolio. Check out my portfolio for free 👇🏻.
                 </p>
                 
                 {/* Portfolio Preview */}
@@ -181,11 +181,11 @@ export const Test = () => {
                     rel="noopener noreferrer"
                     className="block group flex-1"
                   >
-                    <div className="relative h-full rounded-lg overflow-hidden border border-green-500/20 hover:border-green-500/40 transition-all group-hover:scale-[1.02]">
+                    <div className="relative h-full rounded-lg overflow-hidden border border-green-500/20 hover:border-green-500/40 transition-all group-hover:scale-[1.02] min-h-[200px]">
                       <img
                         src={stocksImage}
                         alt="Stock Portfolio"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover opacity-80"
                       />
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                       <div className="absolute bottom-4 left-4 right-4">
@@ -204,7 +204,7 @@ export const Test = () => {
             </div>
 
             {/* Intramural Sports - Bottom Right */}
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-r from-yellow-500/10 to-orange-500/10 hover:border-yellow-500/30">
+            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-r from-yellow-500/10 to-orange-500/10 hover:border-yellow-500/30 min-h-[400px]">
               <div className="h-full flex flex-col">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
@@ -245,8 +245,8 @@ export const Test = () => {
             </div>
 
           </div>
-        </div>
-      </RevealOnScroll>
+        </RevealOnScroll>
+      </div>
     </section>
   );
 };
