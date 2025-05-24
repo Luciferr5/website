@@ -1,4 +1,5 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import { SpotifyPlayer } from "../Spotify";
 import profilePic from "../../images/IMG_2811.JPG";
 
 export const Test = () => {
@@ -67,7 +68,7 @@ export const Test = () => {
                 in molecular analysis as a Machine Learning Research Assistant at McMaster University. 
                 You can view my resume{" "}
                 <a 
-                  href="/Resume-8.pdf" 
+                  href="/Resume-7.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-blue-400 hover:text-blue-300 underline transition-colors inline-flex items-center gap-1"
@@ -216,59 +217,9 @@ export const Test = () => {
               </div>
             </div>
 
-            {/* Spotify Music Box - SECOND LARGEST (spans 2x2) - Interactive */}
+            {/* Spotify Music Box - SECOND LARGEST (spans 2x2) - Interactive with Real API */}
             <div className="col-span-2 row-span-2 rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-br from-green-500/10 to-blue-500/10 hover:border-green-500/30">
-              <div className="h-full flex flex-col">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
-                    <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.42 1.56-.299.421-1.02.599-1.559.3z"/>
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-bold text-white">Now Playing</h3>
-                </div>
-                
-                <div className="flex-1 flex flex-col">
-                  {/* Album Art and Song Info */}
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 bg-gray-800 rounded-lg mr-4 flex items-center justify-center">
-                      <svg className="w-8 h-8 text-gray-600" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
-                      </svg>
-                    </div>
-                    <div className="flex-1">
-                      <p className="font-bold text-white text-sm">Not Playing</p>
-                      <p className="text-gray-400 text-xs">Connect Spotify</p>
-                    </div>
-                  </div>
-                  
-                  {/* Music Controls */}
-                  <div className="flex items-center justify-center space-x-4 mb-4">
-                    <button className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
-                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/>
-                      </svg>
-                    </button>
-                    <button className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center hover:bg-green-600 transition-colors shadow-lg">
-                      <svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </button>
-                    <button className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors">
-                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/>
-                      </svg>
-                    </button>
-                  </div>
-                  
-                  {/* Progress Bar */}
-                  <div className="w-full bg-gray-700 rounded-full h-1 mb-2">
-                    <div className="bg-green-500 h-1 rounded-full w-0"></div>
-                  </div>
-                  
-                  <p className="text-gray-400 text-xs text-center">Ready to connect with Spotify API</p>
-                </div>
-              </div>
+              <SpotifyPlayer />
             </div>
 
             {/* Sports Box - Smaller (spans 2x1) */}
@@ -278,7 +229,7 @@ export const Test = () => {
                   ⚽
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white">Sports</h3>
+                  <h3 className="text-lg font-bold text-white">Intramural Sports</h3>
                   <p className="text-gray-400 text-sm">Captain of a cricket intramural team @McMaster University.</p>
                 </div>
               </div>
