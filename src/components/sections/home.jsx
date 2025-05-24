@@ -5,11 +5,11 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center py-20"
+      className="min-h-screen flex items-center justify-center py-8"
     >
       <RevealOnScroll>
         <div className="max-w-7xl mx-auto px-4 h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[80vh]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[75vh] -mt-8">
             
             {/* Content Section - Left Side */}
             <div className="order-2 lg:order-1 text-center lg:text-left">
@@ -40,8 +40,8 @@ export const Home = () => {
             </div>
 
             {/* Robot Section - Right Side */}
-            <div className="order-1 lg:order-2 h-full">
-              <div className="w-full h-[60vh] lg:h-[80vh] min-h-[500px]">
+            <div className="order-1 lg:order-2 h-full overflow-hidden">
+              <div className="w-[180%] h-[80vh] lg:h-[100vh] min-h-[500px] relative -translate-x-[40%]">
                 <Robot />
               </div>
             </div>

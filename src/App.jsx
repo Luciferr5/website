@@ -6,7 +6,8 @@ import {MobileMenu} from "./components/MobileMenu";
 import {Test} from "./components/sections/Test";
 import {Home} from "./components/sections/home";
 // import {About} from "./components/sections/about"
-import {Projects} from "./components/sections/projects"
+import {Background} from "./components/background";
+import {Projects} from "./components/sections/projects";
 import { Contact } from "./components/sections/contact";
 import "./index.css";
 
@@ -23,14 +24,16 @@ function App() {
           isLoaded ? "opacity-100" : "opacity-0"
         } bg-black text-gray-100`}
       >
-        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Home/>
-        <Test/>
-        {/* <About/> */}
-        <Projects/>
-        <Contact/>
-
+        <Background splineUrl="https://prod.spline.design/nprJQjCjUsgPZWjp/scene.splinecode" />
+        <div className="relative z-10">
+          <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+          <Home/>
+          <Test/>
+          {/* <About/> */}
+          <Projects/>
+          <Contact/>
+        </div>
       </div>
     </>
   );

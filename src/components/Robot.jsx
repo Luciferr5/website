@@ -17,14 +17,16 @@ export const Robot = () => {
   }, []);
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full overflow-hidden relative">
       <spline-viewer 
         url="https://prod.spline.design/hB965mFWo51kJqC2/scene.splinecode"
         style={{
-          width: '100%',
+          width: '275%', // Make it much wider to give space for the logo
           height: '100%',
           border: 'none',
-          background: 'transparent'
+          background: 'transparent',
+          transform: 'translateX(-26%)', // Shift left to center the robot in visible area
+          transformOrigin: 'center center'
         }}
         // Hide Spline logo and loading screen
         loading-anim="false"
