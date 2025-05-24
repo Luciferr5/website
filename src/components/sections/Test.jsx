@@ -2,6 +2,12 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import { SpotifyPlayer } from "../Spotify";
 import profilePic from "../../images/IMG_2811.JPG";
 import stocksImage from "../../images/stocks.JPG";
+import pic1 from "../../images/pic1.JPG";
+import pic2 from "../../images/pic2.JPG";
+import pic3 from "../../images/pic3.JPG";
+import pic4 from "../../images/pic4.JPG";
+
+
 
 export const Test = () => {
   const frontendSkills = [
@@ -222,8 +228,53 @@ export const Test = () => {
                   </div>
                   
                   <p className="text-gray-400 text-xs mb-3 leading-relaxed">
-                    Throughout childhood, I've been playing all the sports I could competitive in-line skating, football, swimming, tennis etc. I recently led a competitive cricket intramural team at McMaster University.
+                    ·Throughout childhood, I've been playing all the sports I could - competitive in-line skating
+                    , football, swimming, tennis, badminton etc. 
                   </p>
+                  <p className="text-gray-400 text-xs mb-3 leading-relaxed">
+                    ·I have been in multiple sports teams during high-school such as badminton, volleyball, and swimming.
+                  </p>
+                  <p className="text-gray-400 text-xs mb-3 leading-relaxed">
+                    ·I recently led a competitive cricket intramural team at McMaster University.
+                  </p>
+                  <p className="text-gray-400 text-xs mb-3 leading-relaxed">
+                    ·I am currently preparing to run a half marathon later this year.
+                  </p>
+                  {/* Strava Link Section */}
+                  <div className="flex-1 flex flex-col">
+                    <a 
+                      href="https://www.strava.com/athletes/169462931"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block group flex-1"
+                    >
+                      <div className="relative h-full rounded-lg overflow-hidden border border-orange-500/20 hover:border-orange-500/40 transition-all group-hover:scale-[1.02] bg-gradient-to-r from-orange-500/20 to-red-500/20 min-h-[70px]">
+                        <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-red-600/10 group-hover:from-orange-600/5 group-hover:to-red-600/5 transition-colors" />
+                        <div className="relative h-full flex items-center px-6 py-3">
+                          {/* Larger Strava Logo */}
+                          <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.599h4.172L10.463 0l-7 13.828h4.172"/>
+                            </svg>
+                          </div>
+                          
+                          {/* Larger Text Content */}
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <p className="text-xl text-white font-bold text-base">@prakharsaxena on Strava</p>
+                                {/* <p className="text-gray-300 text-sm">@prakharsaxena</p> */}
+                              </div>
+                              <svg className="w-5 h-5 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
+                                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
 
@@ -238,8 +289,40 @@ export const Test = () => {
                   </div>
                   
                   <p className="text-gray-400 text-xs mb-3 leading-relaxed">
-                    Passionate about exploring new cultures and destinations. Always planning the next adventure to broaden perspectives and create lasting memories.
+                  Being a HUGE foodie I'm on a mission to experience the various cusines around the world. 
+                  I love exploring different cities and cultures. At 20, I've been to 16 countries.
                   </p>
+                  {/* Travel Photos Grid */}
+                  <div className="flex-1 grid grid-cols-4 gap-1.5">
+                    <div className="rounded-md overflow-hidden">
+                      <img
+                        src={pic3}
+                        alt="Travel Photo 1"
+                        className="w-35 h-45 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="rounded-md overflow-hidden">
+                      <img
+                        src={pic2}
+                        alt="Travel Photo 2"
+                        className="w-35 h-45 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="rounded-md overflow-hidden">
+                      <img
+                        src={pic1}
+                        alt="Travel Photo 3"
+                        className="w-35 h-45 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                    <div className="rounded-md overflow-hidden">
+                      <img
+                        src={pic4}
+                        alt="Travel Photo 4"
+                        className="w-35 h-45 object-cover hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
 
