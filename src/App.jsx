@@ -7,7 +7,7 @@ import {Test} from "./components/sections/Test";
 import {Home} from "./components/sections/home";
 // import {About} from "./components/sections/about"
 import {Projects} from "./components/sections/projects"
-import { Contact } from "./components/sections/contact";
+// import { Contact } from "./components/sections/contact";
 import "./index.css";
 
 function App() {
@@ -28,8 +28,8 @@ function App() {
         <Home/>
         <Test/>
         {/* <About/> */}
-        <Projects/>
-        <Contact/>
+        {/* <Projects/> */}
+        {/* <Contact/> */}
       </div>
     </>
   );
