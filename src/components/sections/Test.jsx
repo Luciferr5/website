@@ -1,7 +1,7 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { SpotifyPlayer } from "../Spotify";
 import profilePic from "../../images/IMG_2811.JPG";
-import stocksImage from "../../images/stocks.jpg";
+import stocksImage from "../../images/stocks.JPG";
 
 export const Test = () => {
   const frontendSkills = [
@@ -17,7 +17,7 @@ export const Test = () => {
   return (
     <section
       id="test"
-      className="min-h-screen flex items-center justify-center py-20"
+      className="min-h-screen py-20"
     >
       <RevealOnScroll>
         <div className="max-w-6xl mx-auto px-4">
