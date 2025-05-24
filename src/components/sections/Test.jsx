@@ -27,8 +27,17 @@ export const Test = () => {
 
           {/* Profile Picture + About Text Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            
             {/* Profile Picture Box */}
             <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-br from-blue-500/5 to-purple-500/5">
+              {/* Added emoji heading */}
+              <div className="flex items-center mb-6">
+                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
+                  📸
+                </div>
+                <h3 className="text-xl font-bold text-white">Prakhar | pra-car</h3>
+              </div>
+              
               <div className="flex flex-col items-center justify-center h-full">
                 <div className="w-64 h-80 lg:w-72 lg:h-96 rounded-xl overflow-hidden border-4 border-blue-500/30 hover:border-blue-500/50 transition-all duration-300 shadow-[0_0_30px_rgba(59,130,246,0.2)]">
                   <img
@@ -37,15 +46,10 @@ export const Test = () => {
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="mt-6 text-center">
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                    Prakhar | pra-car
-                  </h3>
-                </div>
               </div>
             </div>
 
-            {/* About Text Box */}
+            {/* About Text Box - Reverted back to normal */}
             <div className="rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all">
               <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
                 Who I Am
@@ -65,7 +69,7 @@ export const Test = () => {
                 in molecular analysis as a Machine Learning Research Assistant at McMaster University. 
                 You can view my resume{" "}
                 <a 
-                  href="/Resume-7.pdf" 
+                  href="/Resume-8.pdf" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-blue-400 hover:text-blue-300 underline transition-colors inline-flex items-center gap-1"
@@ -90,11 +94,11 @@ export const Test = () => {
             </div>
           </div>
 
-          {/* 4-Section Grid - Removed height constraints */}
+          {/* Updated Grid Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 auto-rows-auto">
             
             {/* F1 Podcast - Top Left */}
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-b from-red-500/10 to-orange-500/10 hover:border-red-500/30 min-h-[400px]">
+            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-b from-red-500/10 to-orange-500/10 hover:border-red-500/30 min-h-[350px]">
               <div className="h-full flex flex-col">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center mr-3">
@@ -153,12 +157,12 @@ export const Test = () => {
             </div>
 
             {/* Music Player - Top Right */}
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-br from-green-500/10 to-blue-500/10 hover:border-green-500/30 min-h-[400px]">
+            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-br from-green-500/10 to-blue-500/10 hover:border-green-500/30 min-h-[350px]">
               <SpotifyPlayer />
             </div>
 
-            {/* Stock Portfolio - Bottom Left */}
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-br from-green-600/10 to-emerald-500/10 hover:border-green-500/30 min-h-[400px]">
+            {/* Stock Portfolio - Bottom Left (Full Height) */}
+            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-b from-green-600/10 to-emerald-500/10 hover:border-green-500/30 min-h-[500px]">
               <div className="h-full flex flex-col">
                 <div className="flex items-center mb-4">
                   <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
@@ -168,9 +172,10 @@ export const Test = () => {
                 </div>
                 
                 {/* Description */}
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                I've understood the importance of passive income early on, so I make sure to keep up with market 
-                trends and actively invest in building a diversified portfolio. Check out my portfolio for free 👇🏻.
+                <p className="text-gray-400 text-sm mb-3 leading-relaxed">
+                  I've understood the importance of passive income early on, so I make 
+                  sure to keep up with market trends and actively invest in building a 
+                  diversified portfolio. Check out my portfolio for free 👇🏻
                 </p>
                 
                 {/* Portfolio Preview */}
@@ -181,13 +186,13 @@ export const Test = () => {
                     rel="noopener noreferrer"
                     className="block group flex-1"
                   >
-                    <div className="relative h-full rounded-lg overflow-hidden border border-green-500/20 hover:border-green-500/40 transition-all group-hover:scale-[1.02] min-h-[200px]">
+                    <div className="relative h-full rounded-lg overflow-hidden border border-green-500/20 hover:border-green-500/40 transition-all group-hover:scale-[1.02] min-h-[200px] max-h-[490px]">
                       <img
                         src={stocksImage}
                         alt="Stock Portfolio"
-                        className="w-full h-full object-cover opacity-80"
+                        className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                      <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
                       <div className="absolute bottom-4 left-4 right-4">
                         <div className="flex items-center justify-between">
                           <span className="text-green-400 text-sm font-medium">View Portfolio</span>
@@ -203,47 +208,42 @@ export const Test = () => {
               </div>
             </div>
 
-            {/* Intramural Sports - Bottom Right */}
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-r from-yellow-500/10 to-orange-500/10 hover:border-yellow-500/30 min-h-[400px]">
-              <div className="h-full flex flex-col">
-                <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center mr-3">
-                    ⚽
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Intramural Sports</h3>
-                </div>
-                
-                {/* Description */}
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                  Captain of a competitive cricket intramural team at McMaster University. 
-                  Leading team strategy, coordinating practices, and fostering teamwork while staying active and building lasting friendships.
-                </p>
-                
-                {/* Sports Visual/Stats */}
-                <div className="flex-1 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 bg-yellow-500/20 rounded-full flex items-center justify-center mb-4 mx-auto">
-                      <span className="text-3xl">🏏</span>
+            {/* Right Column - Sports + Travel Split */}
+            <div className="flex flex-col gap-6">
+              
+              {/* Sports Section - Top Half */}
+              <div className="rounded-xl p-4 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-r from-yellow-500/10 to-orange-500/10 hover:border-yellow-500/30 h-[320px]">
+                <div className="h-full flex flex-col">
+                  <div className="flex items-center mb-3">
+                    <div className="w-6 h-6 bg-yellow-500 rounded-full flex items-center justify-center mr-2">
+                      ⚽
                     </div>
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-400">Role:</span>
-                        <span className="text-white font-medium">Captain</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-400">Sport:</span>
-                        <span className="text-white font-medium">Cricket</span>
-                      </div>
-                      <div className="flex justify-between text-sm">
-                        <span className="text-gray-400">University:</span>
-                        <span className="text-white font-medium">McMaster</span>
-                      </div>
-                    </div>
+                    <h3 className="text-lg font-bold text-white">Intramural Sports</h3>
                   </div>
+                  
+                  <p className="text-gray-400 text-xs mb-3 leading-relaxed">
+                    Throughout childhood, I've been playing all the sports I could competitive in-line skating, football, swimming, tennis etc. I recently led a competitive cricket intramural team at McMaster University.
+                  </p>
                 </div>
               </div>
-            </div>
 
+              {/* Travel Section - Bottom Half */}
+              <div className="rounded-xl p-4 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-r from-purple-500/10 to-pink-500/10 hover:border-purple-500/30 h-[320px]">
+                <div className="h-full flex flex-col">
+                  <div className="flex items-center mb-3">
+                    <div className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center mr-2">
+                      ✈️
+                    </div>
+                    <h3 className="text-lg font-bold text-white">Travel & Exploration</h3>
+                  </div>
+                  
+                  <p className="text-gray-400 text-xs mb-3 leading-relaxed">
+                    Passionate about exploring new cultures and destinations. Always planning the next adventure to broaden perspectives and create lasting memories.
+                  </p>
+                </div>
+              </div>
+
+            </div>
           </div>
         </RevealOnScroll>
       </div>
