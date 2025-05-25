@@ -1,21 +1,32 @@
 import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
-import {LoadingScreen} from "./components/LoadingScreen";
-import {Navbar} from "./components/Navbar";
-import {MobileMenu} from "./components/MobileMenu";
-import {Test} from "./components/sections/Test";
-import {Home} from "./components/sections/home";
-// import {About} from "./components/sections/about"
-// import {Projects} from "./components/sections/projects"
-// import { Contact } from "./components/sections/contact";
+import { LoadingScreen } from "./components/LoadingScreen";
+import { Navbar } from "./components/Navbar";
+import { MobileMenu } from "./components/MobileMenu";
+import { Home } from "./components/sections/home";
+import { Test } from "./components/sections/Test";
+import { Work } from "./components/sections/Work";
+import { Footer } from "./components/Footer";
 import "./index.css";
+
+// Home Page Component (combines Home and Test sections)
+const HomePage = () => {
+  return (
+    <>
+      <Home />
+      <Test />
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <>
+    <Router>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
       
       <div
@@ -25,14 +36,14 @@ function App() {
       >
         <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
-        <Home/>
-        <Test/>
-        {/* <About/> */}
-        {/* <Projects/> */}
-        {/* <Contact/> */}
+        
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/work" element={<Work />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 
-export default App
+export default App;

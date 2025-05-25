@@ -1,6 +1,23 @@
-import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+  const location = useLocation();
+
+  // Function to handle navigation and close menu
+  const handleNavigation = (sectionId = null) => {
+    setMenuOpen(false);
+    
+    if (sectionId && location.pathname === "/") {
+      // If we're on the home page and navigating to a section, scroll to it
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
+  };
+
   return (
     <div
       className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center
@@ -21,9 +38,9 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         &times;
       </button>
 
-      <a
-        href="#home"
-        onClick={() => setMenuOpen(false)}
+      <Link
+        to="/"
+        onClick={() => handleNavigation("home")}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
                     ${
                       menuOpen
@@ -33,10 +50,11 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
             `}
       >
         Home
-      </a>
-      <a
-        href="#test"
-        onClick={() => setMenuOpen(false)}
+      </Link>
+
+      <Link
+        to="/"
+        onClick={() => handleNavigation("test")}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
               menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
@@ -44,21 +62,23 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     `}
       >
         About
-      </a>
-      <a
-        href="#projects"
-        onClick={() => setMenuOpen(false)}
+      </Link>
+
+      <Link
+        to="/work"
+        onClick={() => handleNavigation()}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
               menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
             }        
     `}
       >
-        Projects
-      </a>
+        Work
+      </Link>
+
       <a
         href="mailto:prakharsaxena5@outlook.com?subject=Hello%20Prakhar&body=Hi%20Prakhar,%0A%0AI%20came%20across%20your%20website%20and%20would%20love%20to%20connect!%0A%0ABest%20regards"
-        onClick={() => setMenuOpen(false)}
+        onClick={() => handleNavigation()}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
               menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
