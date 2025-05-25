@@ -7,6 +7,12 @@ import stabl from '../../images/stabl.jpeg';
 import Mac from '../../images/Mac.png';
 import Eko from '../../images/eko.jpeg';
 import F1 from '../../images/f1.png';
+import p1 from '../../images/project1.png';
+import Lungs from '../../images/lungs.jpeg';
+import Among from '../../images/among-us-logo.jpg';
+import Maths from '../../images/math.png';
+import p2 from '../../images/project2.png';
+
 
 
 
@@ -65,7 +71,7 @@ export const Work = () => {
   const tabs = [
     { id: "work", label: "Work", count: 4 },
     { id: "leadership", label: "Leadership", count: 2 },
-    { id: "projects", label: "Projects", count: 2 }
+    { id: "projects", label: "Projects", count: 3 }
   ];
 
   const experiences = {
@@ -157,24 +163,10 @@ export const Work = () => {
     ],
     projects: [
       {
-        year: "2024",
-        type: "PROJECT",
-        title: "Spectro - Molecular Prediction System",
-        subtitle: "McMaster University • AI Research Project",
-        description: "Multi-modal AI system for molecular structure prediction using IR and NMR spectroscopy data with advanced machine learning techniques.",
-        technologies: ["Python", "TensorFlow", "PyTorch", "Hugging Face", "LLaMA 3"],
-        achievements: [
-          "Fine-tuned CNN achieving 91% f1 score for functional groups",
-          "Designed RNN with LSTM decoder achieving 93% accuracy",
-          "Implemented complete ML pipeline with data augmentation"
-        ],
-        logo: "/logos/spectro-logo.png"
-      },
-      {
-        year: "2023",
+        year: "December 2024",
         type: "PROJECT",
         title: "Lung Cancer Detector",
-        subtitle: "Machine Learning Classification Project",
+        subtitle: "Machine Learning Project",
         description: "Implemented Random Forest Classifier using Scikit-learn to predict lung cancer with high accuracy, including complete preprocessing and deployment pipeline.",
         technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Joblib"],
         achievements: [
@@ -182,7 +174,63 @@ export const Work = () => {
           "Preprocessed 309 entries reducing processing time by 40%",
           "Deployed predictive pipeline for real-time diagnosis"
         ],
-        logo: "/logos/lung-cancer-logo.png"
+        thumbnail: Lungs,
+        link: "https://github.com/Luciferr5/lung-cancer-detector"
+      },
+      {
+        year: "September 2023",
+        type: "PROJECT",
+        title: "Abstrcat Shape Collision Detector",
+        subtitle: "Java Project",
+        description: "Developed a Java application to manage geometric shape interactions using a preset UML class diagram.",
+        technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Joblib"],
+        achievements: [
+          "Engineered and optimized intersection algorithms to distinguish direct overlaps from edge contacts, reducing redundancy and enhancing code efficiency.",
+          "Conducted extensive testing to ensure accurate functionality and flawless execution with a success rate of 95%, achieving error-free compilation and adherence to precise software specifications.",
+        ],
+        thumbnail: p2,
+        link: "https://github.com/Luciferr5/ShapeCollisionDetector"
+      },
+      {
+        year: "April 2022",
+        type: "PROJECT",
+        title: "Math Visualizer Educator",
+        subtitle: "McMaster University",
+        description: "An interactive web-based application that teaches children algebraic sequences and series through engaging learning modules, comprehensive question banks, and educational videos.",
+        technologies: ["ELM", "Algebra"],
+        achievements: [
+          "Built an interactive study platform to teach sequences and series.",
+          "Developed interactive teaching segments, and question banks."
+        ],
+        thumbnail: Maths,
+        link: "https://stabl.rocks/ShowModulePublish?modulePublishId=feff7e89-7e47-46a6-affd-4551e711f6d1" 
+      },
+      {
+        year: "March 2022",
+        type: "PROJECT",
+        title: "Among Us Clone",
+        subtitle: "McMaster University",
+        description: "A web based clone of the popular game - Among Us.",
+        technologies: ["ELM"],
+        achievements: [
+          "Built interactive 2D map with 3 interactive games and states.",
+          "Developed all components, functionalities, and state management from scratch, ensuring seamless integration."
+        ],
+        thumbnail: Among,
+        link: "https://github.com/Luciferr5/AmongUs/tree/main" 
+      },
+      {
+        year: "January 2022",
+        type: "PROJECT",
+        title: "Sierpinski's Hexagon",
+        subtitle: "McMaster University",
+        description: "Built a recursive animation showing a version of Sierpinski's Hexagon, with a slider going back and fourth through the recursive steps.",
+        technologies: ["ELM", "Recursion"],
+        achievements: [
+          "Built a recursive animation showing a version of Sierpinski's Hexagon, with a slider going back and fourth through the recursive steps.",
+        ],
+        thumbnail: p1,
+        link: "https://stabl.rocks/ShowModulePublish?modulePublishId=ef4f1b23-007d-477b-8abc-953fd6161a9c"
       }
     ]
   };
@@ -268,35 +316,89 @@ export const Work = () => {
 
                       {/* Experience Card */}
                       <div className="bg-gray-900/40 backdrop-blur-lg rounded-xl p-8 border border-gray-700 hover:border-purple-500/50 transition-all duration-300 hover:-translate-y-1">
-                        {/* Header with Logo */}
-                        <div className="flex items-start mb-4">
-                          <div className="flex items-center gap-4">
-                            {/* Company Logo */}
-                            <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden">
+                        
+                        {/* Header with Logo (only for work and leadership) */}
+                        {experience.logo && (
+                          <div className="flex items-start mb-4">
+                            <div className="flex items-center gap-4">
+                              {/* Company Logo */}
+                              <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden">
+                                <img
+                                  src={experience.logo}
+                                  alt={`${experience.title} logo`}
+                                  className="w-8 h-8 object-contain"
+                                  onError={(e) => {
+                                    // Fallback to colored circle with first letter if logo fails to load
+                                    e.target.style.display = 'none';
+                                    e.target.nextSibling.style.display = 'flex';
+                                  }}
+                                />
+                                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full items-center justify-center text-white font-bold text-sm hidden">
+                                  {experience.title.charAt(0)}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Project Thumbnail (only for projects) */}
+                        {experience.thumbnail && (
+                          <div className="mb-6">
+                            <a
+                              href={experience.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block relative w-full h-48 rounded-lg overflow-hidden border border-gray-600 hover:border-purple-500/50 transition-all duration-300 group cursor-pointer"
+                            >
                               <img
-                                src={experience.logo}
-                                alt={`${experience.title} logo`}
-                                className="w-8 h-8 object-contain"
+                                src={experience.thumbnail}
+                                alt={`${experience.title} thumbnail`}
+                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                 onError={(e) => {
-                                  // Fallback to colored circle with first letter if logo fails to load
+                                  // Fallback to gradient background if thumbnail fails to load
                                   e.target.style.display = 'none';
                                   e.target.nextSibling.style.display = 'flex';
                                 }}
                               />
-                              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full items-center justify-center text-white font-bold text-sm hidden">
-                                {experience.title.charAt(0)}
+                              <div className="w-full h-full bg-gradient-to-br from-blue-500/20 to-purple-600/20 items-center justify-center text-white hidden">
+                                <div className="text-center">
+                                  <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                      <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd"/>
+                                    </svg>
+                                  </div>
+                                  <p className="text-sm opacity-75">Project Preview</p>
+                                </div>
                               </div>
-                            </div>
+                              
+                              {/* Hover Overlay with Link Icon */}
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div className="bg-white/20 backdrop-blur-sm rounded-full p-3 transform scale-75 group-hover:scale-100 transition-transform duration-300">
+                                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                  </svg>
+                                </div>
+                              </div>
+
+                              {/* View Project Badge */}
+                              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <span className="bg-purple-600/90 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full font-medium">
+                                  View Project
+                                </span>
+                              </div>
+                            </a>
                           </div>
-                        </div>
+                        )}
 
                         {/* Title and Subtitle */}
-                        <h3 className="text-2xl font-bold text-white mb-2">
-                          {experience.title}
-                        </h3>
-                        <p className="text-purple-400 mb-4 font-medium">
-                          {experience.subtitle}
-                        </p>
+                        <div className={!experience.logo && !experience.thumbnail ? 'mt-4' : ''}>
+                          <h3 className="text-2xl font-bold text-white mb-2">
+                            {experience.title}
+                          </h3>
+                          <p className="text-purple-400 mb-4 font-medium">
+                            {experience.subtitle}
+                          </p>
+                        </div>
 
                         {/* Description */}
                         <p className="text-gray-300 mb-6 leading-relaxed">
@@ -366,7 +468,7 @@ export const Work = () => {
                 >
                   Get In Touch
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z" />
                   </svg>
                 </a>
               </div>
