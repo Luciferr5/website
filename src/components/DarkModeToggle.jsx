@@ -28,7 +28,7 @@ export const DarkModeToggle = () => {
   return (
     <button
       onClick={toggle}
-      className={`relative inline-flex items-center justify-center w-12 h-6 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 ${
+      className={`relative inline-flex items-center justify-center w-11 h-6 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 ${
         isDark 
           ? 'bg-purple-600 dark:focus:ring-offset-gray-900' 
           : 'bg-gray-300 focus:ring-offset-white'
@@ -39,7 +39,7 @@ export const DarkModeToggle = () => {
       {/* Sliding Circle */}
       <span
         className={`absolute w-5 h-5 bg-white rounded-full shadow-lg transform -translate-x-px transition-all duration-300 ease-out flex items-center justify-center ${
-          isDark ? 'translate-x-3 translate-y-0' : '-translate-x-70 translate-y-0'
+          isDark ? 'translate-x-2 translate-y-0' : '-translate-x-10 translate-y-0'
         }`}
       >
         {/* Icon inside circle */}

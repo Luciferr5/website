@@ -5,8 +5,7 @@ export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center py-8"
-    >
+      className="min-h-screen flex items-center justify-center py-8 bg-white dark:bg-black transition-colors duration-300"    >
       <RevealOnScroll>
         <div className="max-w-7xl mx-auto px-4 h-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[75vh] -mt-8">
