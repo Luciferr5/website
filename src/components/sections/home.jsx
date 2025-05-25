@@ -25,7 +25,7 @@ export const Home = () => {
               <div className="flex justify-center lg:justify-start space-x-6">
                 {/* GitHub Icon */}
                 <a
-                  href="https://github.com/prakharsaxena1" // Replace with your GitHub URL
+                  href="https://github.com/Luciferr5" // Replace with your GitHub URL
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group transition-all duration-300 hover:-translate-y-1"
