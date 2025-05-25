@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 import { Footer } from "../Footer";
 import EY from '../../images/ey.png';
+import ArrInd from '../../images/ArrayInd.png';
 import SPC from '../../images/SPC.jpeg';
 import stabl from '../../images/stabl.jpeg';
 import Mac from '../../images/Mac.png';
@@ -12,10 +13,6 @@ import Lungs from '../../images/lungs.jpeg';
 import Among from '../../images/among-us-logo.jpg';
 import Maths from '../../images/math.png';
 import p2 from '../../images/project2.png';
-
-
-
-
 
 export const Work = () => {
   const [activeTab, setActiveTab] = useState("work");
@@ -69,9 +66,9 @@ export const Work = () => {
   }, [activeTab]); // Re-run when tab changes
 
   const tabs = [
-    { id: "work", label: "Work", count: 4 },
+    { id: "work", label: "Work", count: 5 },
     { id: "leadership", label: "Leadership", count: 2 },
-    { id: "projects", label: "Projects", count: 3 }
+    { id: "projects", label: "Projects", count: 5 }
   ];
 
   const experiences = {
@@ -86,7 +83,8 @@ export const Work = () => {
         achievements: [
           "Currently integrating an AI model with a Vector database using a RAG service to make AI Assistants for various EY clients accross various industries."
         ],
-        logo: EY
+        logo: EY,
+        companyUrl: "https://www.ey.com/en_ng"
       },
       {
         year: "Jan 2025 - Present",
@@ -101,7 +99,22 @@ export const Work = () => {
           "Utilized LLaMA 3 and GPT-2 to generate embeddings from NMR text data, enabling multimodal integration.",
           "Implemented a complete ML pipeline in TensorFlow, incorporating data augmentation, oversampling, cross-validation, custom learning rate scheduling, and distributed training."
         ],
-        logo: Mac
+        logo: Mac,
+        companyUrl: "https://www.mcmaster.ca"
+      },
+      {
+        year: "Summer 2024",
+        type: "WORK",
+        title: "Coding Intructor",
+        subtitle: "Fondation STaBL Foundation • Hamilon, ON",
+        description: "Providing comprehensive Elm sprint coding lessons to students across diverse educational institutions, for the McMaster start learning program.",
+        technologies: ["ELM"],
+        achievements: [
+          "Devised engaging and interactive class sessions to ensure an enjoyable learning experience for young minds.",
+          "Skillfully prepared students to showcase their acquired knowledge and coding proficiency by participating in WORDATHON 2023, where they excelled in the competition through their coding prowess.",
+        ],
+        logo: stabl,
+        companyUrl: "https://stablfoundation.org"
       },
       {
         year: "Summer 2023",
@@ -115,21 +128,24 @@ export const Work = () => {
           "Leveraged the Swagger API platform for seamless API development and integration while demonstrating technical proficiency and problem-solving skills in web development, increasing customer satisfaction ratings by 15%.",
           "Conducted user research to pinpoint pain points in the user interface experience, leading to a 30% increase in user satisfaction by implementing targeted improvements."
         ],
-        logo: SPC
+        logo: SPC,
+        companyUrl: "https://www.sevenup.org"
       },
       {
-        year: "Summer 2024",
+        year: "December 2022",
         type: "WORK",
-        title: "Coding Intructor",
-        subtitle: "Fondation STaBL Foundation • Hamilon, ON",
-        description: "Providing comprehensive Elm sprint coding lessons to students across diverse educational institutions, ranging from grades 2 to 8, for the McMaster start learning program.",
-        technologies: ["ELM"],
+        title: "Full Stack Developer Intern ",
+        subtitle: "ArrayIndex Inc.• Burlingtno, ON",
+        description: "Converted a static HTML webpage to a React web page using JavaScript and ReactJS to allow dynamic functionality.",
+        technologies: ["ReactJS", "HTLM/CSS", "Tailwind CSS", "Python"],
         achievements: [
-          "Devised engaging and interactive class sessions to ensure an enjoyable learning experience for young minds.",
-          "Skillfully prepared students to showcase their acquired knowledge and coding proficiency by participating in WORDATHON 2023, where they excelled in the competition through their coding prowess.",
+          "Worked on hosting the site on a third-party service railway.com(PaaS).",
+          "Developed a back-end service web crawler using Python and existing libraries to increase site-wide flow by 20% users.          ",
         ],
-        logo: stabl
+        logo: ArrInd,
+        companyUrl: "https://arrayindex-website-react.onrender.com"
       }
+      
     ],
     leadership: [
       {
@@ -321,21 +337,47 @@ export const Work = () => {
                         {experience.logo && (
                           <div className="flex items-start mb-4">
                             <div className="flex items-center gap-4">
-                              {/* Company Logo */}
+                              {/* Company Logo - Now Clickable */}
                               <div className="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center overflow-hidden">
-                                <img
-                                  src={experience.logo}
-                                  alt={`${experience.title} logo`}
-                                  className="w-8 h-8 object-contain"
-                                  onError={(e) => {
-                                    // Fallback to colored circle with first letter if logo fails to load
-                                    e.target.style.display = 'none';
-                                    e.target.nextSibling.style.display = 'flex';
-                                  }}
-                                />
-                                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full items-center justify-center text-white font-bold text-sm hidden">
-                                  {experience.title.charAt(0)}
-                                </div>
+                                {experience.companyUrl ? (
+                                  <a
+                                    href={experience.companyUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="w-8 h-8 flex items-center justify-center hover:scale-110 transition-transform duration-200"
+                                    title={`Visit ${experience.subtitle.split('•')[0].trim()} website`}
+                                  >
+                                    <img
+                                      src={experience.logo}
+                                      alt={`${experience.title} logo`}
+                                      className="w-8 h-8 object-contain"
+                                      onError={(e) => {
+                                        // Fallback to colored circle with first letter if logo fails to load
+                                        e.target.style.display = 'none';
+                                        e.target.nextSibling.style.display = 'flex';
+                                      }}
+                                    />
+                                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full items-center justify-center text-white font-bold text-sm hidden">
+                                      {experience.title.charAt(0)}
+                                    </div>
+                                  </a>
+                                ) : (
+                                  <>
+                                    <img
+                                      src={experience.logo}
+                                      alt={`${experience.title} logo`}
+                                      className="w-8 h-8 object-contain"
+                                      onError={(e) => {
+                                        // Fallback to colored circle with first letter if logo fails to load
+                                        e.target.style.display = 'none';
+                                        e.target.nextSibling.style.display = 'flex';
+                                      }}
+                                    />
+                                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full items-center justify-center text-white font-bold text-sm hidden">
+                                      {experience.title.charAt(0)}
+                                    </div>
+                                  </>
+                                )}
                               </div>
                             </div>
                           </div>
