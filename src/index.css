@@ -57,3 +57,11 @@ spline-viewer .spline-watermark,
 spline-viewer .logo {
   display: none !important;
 }
+
+spline-viewer::part(logo) {
+  display: none !important;
+}
+spline-viewer .spline-watermark,
+spline-viewer .logo {
+  display: none !important;
+}
