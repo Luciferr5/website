@@ -13,6 +13,8 @@ import Lungs from '../../images/lungs.jpeg';
 import Among from '../../images/among-us-logo.jpg';
 import Maths from '../../images/math.png';
 import p2 from '../../images/project2.png';
+import analysis from '../../images/analysis.png';
+
 
 export const Work = () => {
   const [activeTab, setActiveTab] = useState("work");
@@ -68,7 +70,7 @@ export const Work = () => {
   const tabs = [
     { id: "work", label: "Work", count: 5 },
     { id: "leadership", label: "Leadership", count: 2 },
-    { id: "projects", label: "Projects", count: 5 }
+    { id: "projects", label: "Projects", count: 6 }
   ];
 
   const experiences = {
@@ -192,6 +194,20 @@ export const Work = () => {
         ],
         thumbnail: Lungs,
         link: "https://github.com/Luciferr5/lung-cancer-detector"
+      },
+      {
+        year: "January 2024",
+        type: "PROJECT",
+        title: "Sorting algorithms analysis",
+        subtitle: "Algorithms implementation in Python.",
+        description: "This project examines and compares various shortest path algorithms, with an emphasis on Dijkstra’s and Bellman-Ford algorithms, and explores the A* algorithm as a more advanced option.",
+        technologies: ["Python", "MatPlotLib", "TimeIt", "NumPy", "Sorting Algorithms"],
+        achievements: [
+          "Implemented the 3 sorting algorithms and analyzed their performance in various scenarios, and compared their efficiency with different data sets.",
+          "Understood trade-offs between different algorithms and determine which is best suited for specific types of problems."
+        ],
+        thumbnail: analysis,
+        link: "https://github.com/Luciferr5/Sorting-algorithms-analysis/tree/main"
       },
       {
         year: "September 2023",
