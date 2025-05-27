@@ -14,6 +14,7 @@ import Among from '../../images/among-us-logo.jpg';
 import Maths from '../../images/math.png';
 import p2 from '../../images/project2.png';
 import analysis from '../../images/analysis.png';
+import ToDo from '../../images/to-do.png';
 
 
 export const Work = () => {
@@ -70,7 +71,7 @@ export const Work = () => {
   const tabs = [
     { id: "work", label: "Work", count: 5 },
     { id: "leadership", label: "Leadership", count: 2 },
-    { id: "projects", label: "Projects", count: 6 }
+    { id: "projects", label: "Projects", count: 7 }
   ];
 
   const experiences = {
@@ -222,6 +223,20 @@ export const Work = () => {
         ],
         thumbnail: p2,
         link: "https://github.com/Luciferr5/ShapeCollisionDetector"
+      },
+      {
+        year: "Summer 2023",
+        type: "PROJECT",
+        title: "To-Do List Web App",
+        subtitle: "First react project",
+        description: "Built a to-do list web app to improve productivity and time-management.",
+        technologies: ["ReactJS", "HTML/CSS", "Bootstrap", "TailwindCSS"],
+        achievements: [
+          "Added functionality such as, editing and deleting to-do's.",
+          "Used TailwindCSS to make the website more vibrant."
+        ],
+        thumbnail: ToDo,
+        link: "https://github.com/Luciferr5/To-Do-App"
       },
       {
         year: "April 2022",
