@@ -7,8 +7,6 @@ import pic2 from "../../images/pic2.JPG";
 import pic3 from "../../images/pic3.JPG";
 import pic4 from "../../images/pic4.JPG";
 
-
-
 export const Test = () => {
   const frontendSkills = [
     "React",

@@ -31,14 +31,19 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             src={logo} 
             alt="Prakhar Saxena" 
             className="h-10 w-auto hover:scale-105 transition-transform duration-200"
+            onError={(e) => {
+              // Fallback to text if image fails
+              e.target.style.display = 'none';
+              e.target.nextSibling.style.display = 'block';
+            }}
           />
+          <span className="text-white font-bold text-xl hidden">PS</span>
         </Link>
 
-          {/* Mobile menu toggle and dark mode toggle */}
+          {/* Mobile menu toggle */}
           <div className="flex items-center space-x-3 md:hidden">
-            <DarkModeToggle />
             <div
-              className="w-7 h-5 relative cursor-pointer z-40"
+              className="w-7 h-5 relative cursor-pointer z-40 text-white text-xl"
               onClick={() => setMenuOpen((prev) => !prev)}
             >
               &#9776;
@@ -73,10 +78,6 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             >
               Contact
             </a>
-            {/* Add some space before the toggle */}
-            {/* <div className="ml-4">
-              <DarkModeToggle />
-            </div> */}
           </div>
         </div>
       </div>
