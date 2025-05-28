@@ -333,5 +333,3 @@ export const Test = () => {
     </section>
   );
 };
-
-export default Test;
