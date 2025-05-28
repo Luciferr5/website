@@ -15,7 +15,7 @@ import Maths from '../../images/math.png';
 import p2 from '../../images/project2.png';
 import analysis from '../../images/analysis.png';
 import ToDo from '../../images/to-do.png';
-
+import { StarBackground } from "../StarBackground";
 
 export const Work = () => {
   const [activeTab, setActiveTab] = useState("work");
@@ -286,6 +286,8 @@ export const Work = () => {
 
   return (
     <div className="min-h-screen bg-black text-gray-100">
+      <StarBackground />
+
       {/* Header Section */}
       <section className="pt-24 pb-12">
         <div className="max-w-6xl mx-auto px-4">

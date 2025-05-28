@@ -1,14 +1,18 @@
 import { RevealOnScroll } from "../RevealOnScroll";
 import { Robot } from "../Robot";
+import { StarBackground } from "../StarBackground";
 
 export const Home = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center py-8 bg-white dark:bg-black transition-colors duration-300"
+      className="min-h-screen flex items-center justify-center py-8 bg-white dark:bg-black transition-colors duration-300 relative"
     >
+      {/* Star Background only for Home section */}
+      <StarBackground />
+      
       <RevealOnScroll>
-        <div className="max-w-7xl mx-auto px-4 h-full">
+        <div className="max-w-7xl mx-auto px-4 h-full relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center min-h-[75vh] -mt-8">
             
             {/* Content Section - Left Side */}
@@ -25,7 +29,7 @@ export const Home = () => {
               <div className="flex justify-center lg:justify-start space-x-6">
                 {/* GitHub Icon */}
                 <a
-                  href="https://github.com/Luciferr5"
+                  href="https://github.com/Luciferr5" // Replace with your GitHub URL
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group transition-all duration-300 hover:-translate-y-1"
@@ -37,7 +41,7 @@ export const Home = () => {
 
                 {/* LinkedIn Icon */}
                 <a
-                  href="https://linkedin.com/in/prakharsaxena5"
+                  href="https://linkedin.com/in/prakharsaxena1" // Replace with your LinkedIn URL
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group transition-all duration-300 hover:-translate-y-1"
