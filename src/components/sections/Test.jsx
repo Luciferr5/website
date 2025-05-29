@@ -165,11 +165,11 @@ export const Test = () => {
               <SpotifyPlayer />
             </div>
 
-            {/* Stock Portfolio - Bottom Left (Full Height) */}
-            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-b from-green-600/10 to-emerald-500/10 hover:border-green-500/30 min-h-[500px]">
+            {/* Stock Portfolio - Bottom Left (Full Height) - CHANGED TO BLUE */}
+            <div className="rounded-xl p-6 border-white/10 border hover:-translate-y-1 transition-all bg-gradient-to-b from-blue-600/10 to-cyan-500/10 hover:border-blue-500/30 min-h-[500px]">
               <div className="h-full flex flex-col">
                 <div className="flex items-center mb-4">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center mr-3">
+                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center mr-3">
                     📈
                   </div>
                   <h3 className="text-xl font-bold text-white">Stock Portfolio</h3>
@@ -190,7 +190,7 @@ export const Test = () => {
                     rel="noopener noreferrer"
                     className="block group flex-1"
                   >
-                    <div className="relative h-full rounded-lg overflow-hidden border border-green-500/20 hover:border-green-500/40 transition-all group-hover:scale-[1.02] min-h-[200px] max-h-[490px]">
+                    <div className="relative h-full rounded-lg overflow-hidden border border-blue-500/20 hover:border-blue-500/40 transition-all group-hover:scale-[1.02] min-h-[200px] max-h-[490px]">
                       <img
                         src={stocksImage}
                         alt="Stock Portfolio"
@@ -199,8 +199,8 @@ export const Test = () => {
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors" />
                       <div className="absolute bottom-4 left-4 right-4">
                         <div className="flex items-center justify-between">
-                          <span className="text-green-400 text-sm font-medium">View Portfolio</span>
-                          <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                          <span className="text-blue-400 text-sm font-medium">View Portfolio</span>
+                          <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/>
                             <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/>
                           </svg>

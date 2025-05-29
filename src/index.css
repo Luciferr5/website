@@ -1,27 +1,26 @@
 @import "tailwindcss";
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Space Grotesk", sans-serif;
-  background: #ffffff;
-  color: #111827;
-}
+@theme {
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-card: hsl(var(--card));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --animate-blink: blink 0.8s step-end infinite;
+  --animate-loading-bar: loading 0.8s ease infinite;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
+  --animate-meteor: meteor 5s linear infinite;
 
-@layer utilities {
   @keyframes blink {
-    0%,
-    100% {
+    0%, 100% {
       opacity: 1;
     }
     50% {
       opacity: 0;
     }
-  }
-
-  .animate-blink {
-    animation: blink 0.8s step-end infinite;
   }
 
   @keyframes loading {
@@ -33,14 +32,8 @@ body {
     }
   }
 
-  .animate-loading-bar {
-    animation: loading 0.8s ease infinite;
-  }
-
-  /* New star background animations */
   @keyframes pulse-subtle {
-    0%,
-    100% {
+    0%, 100% {
       opacity: 1;
     }
     50% {
@@ -61,6 +54,88 @@ body {
       opacity: 0;
     }
   }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4.9%;
+    --primary: 250 47% 60%;
+    --primary-foreground: 210 40% 98%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 46.9%;
+    --border: 214 32% 91%;
+    --star-color: 180 180 180;
+    --star-opacity: 0.7;
+  }
+
+  .dark {
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --primary: 250 65% 65%;
+    --primary-foreground: 213 31% 91%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --border: 217 33% 20%;
+    --star-color: 180 180 180;
+    --star-opacity: 0.8;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    /* Hide scrollbar for all browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-family: "Space Grotesk", sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
+    /* Hide scrollbar for all browsers */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+
+  body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Only constrain specific elements that might cause overflow, not the Robot */
+  section, div:not([class*="robot"]):not([class*="spline"]) {
+    box-sizing: border-box;
+  }
+}
+
+@layer utilities {
+  .animate-blink {
+    animation: blink 0.8s step-end infinite;
+  }
+
+  .animate-loading-bar {
+    animation: loading 0.8s ease infinite;
+  }
 
   .animate-pulse-subtle {
     animation: pulse-subtle 4s ease-in-out infinite;
@@ -70,28 +145,52 @@ body {
     animation: meteor 5s linear infinite;
   }
 
-  /* Star and meteor styles */
+  /* Star and meteor styles with theme-aware colors */
   .star {
-    @apply absolute rounded-full bg-white;
-    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+    @apply absolute rounded-full;
+    background: rgb(var(--star-color));
+    box-shadow: 0 0 10px 2px rgba(var(--star-color), var(--star-opacity));
   }
 
   .meteor {
     @apply absolute rounded-full;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8), transparent);
-    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(to right, rgb(180, 180, 180), rgba(180, 180, 180, 0.8), transparent);
+    box-shadow: 0 0 10px 5px rgba(180, 180, 180, 0.4);
   }
-}
 
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
+  /* Dark mode specific meteor styling */
+  .dark .meteor {
+    background: linear-gradient(to right, rgb(180, 180, 180), rgba(180, 180, 180, 0.9), transparent);
+    box-shadow: 0 0 10px 5px rgba(180, 180, 180, 0.5);
+  }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Custom utilities for your theme */
+  .text-glow {
+    @apply relative;
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+  }
+
+  .card-hover {
+    @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+  }
+
+  .cosmic-button {
+    @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
+           transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+           hover:scale-105 active:scale-95;
+  }
 }
 
 /* Hide Spline logo */
@@ -104,18 +203,22 @@ spline-viewer .logo {
   display: none !important;
 }
 
-/* Dark mode styles for stars (make them more visible in light mode) */
-.dark .star {
-  background: white;
-  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.6);
+/* Custom scrollbar theming - disabled since scrollbar is hidden */
+/*
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-:not(.dark) .star {
-  background: #1e293b;
-  box-shadow: 0 0 10px 2px rgba(30, 41, 59, 0.4);
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
 }
 
-:not(.dark) .meteor {
-  background: linear-gradient(to right, rgba(30, 41, 59, 1), rgba(30, 41, 59, 0.8), transparent);
-  box-shadow: 0 0 10px 5px rgba(30, 41, 59, 0.3);
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 4px;
 }
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary));
+}
+*/
