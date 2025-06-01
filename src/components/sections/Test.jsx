@@ -2,7 +2,7 @@ import { RevealOnScroll } from "../RevealOnScroll";
 import { SpotifyPlayer } from "../Spotify";
 import profilePic from "../../images/IMG_2811.JPG";
 import stocksImage from "../../images/stocks.JPG";
-import pic1 from "../../images/pic1.JPG";
+import pic1 from "../../images/pic6.png";
 import pic2 from "../../images/pic2.JPG";
 import pic3 from "../../images/pic3.JPG";
 import pic4 from "../../images/pic4.JPG";
@@ -301,14 +301,14 @@ export const Test = () => {
                     </div>
                     <div className="rounded-md overflow-hidden">
                       <img
-                        src={pic2}
+                        src={pic1}
                         alt="Travel Photo 2"
                         className="w-35 h-45 object-cover hover:scale-105 transition-transform duration-300"
                       />
                     </div>
                     <div className="rounded-md overflow-hidden">
                       <img
-                        src={pic1}
+                        src={pic2}
                         alt="Travel Photo 3"
                         className="w-35 h-45 object-cover hover:scale-105 transition-transform duration-300"
                       />
