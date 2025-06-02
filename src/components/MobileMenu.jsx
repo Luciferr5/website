@@ -1,20 +1,33 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Function to handle navigation and close menu
   const handleNavigation = (sectionId = null) => {
     setMenuOpen(false);
     
-    if (sectionId && location.pathname === "/") {
-      // If we're on the home page and navigating to a section, scroll to it
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }, 100);
+    if (sectionId) {
+      if (location.pathname === "/") {
+        // If we're on the home page, scroll to section
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 100);
+      } else {
+        // If we're on a different page, navigate to home then scroll
+        navigate("/");
+        // Wait for navigation to complete, then scroll
+        setTimeout(() => {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+          }
+        }, 300);
+      }
     }
   };
 
@@ -52,8 +65,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         Home
       </Link>
 
-      <Link
-        to="/"
+      <button
         onClick={() => handleNavigation("test")}
         className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
             ${
@@ -62,7 +74,7 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
     `}
       >
         About
-      </Link>
+      </button>
 
       <Link
         to="/work"

@@ -22,6 +22,11 @@ export const Work = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const timelineRef = useRef(null);
 
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Handle scroll progress for timeline
   useEffect(() => {
     const handleScroll = () => {
@@ -31,26 +36,30 @@ export const Work = () => {
       const rect = timelineElement.getBoundingClientRect();
       const windowHeight = window.innerHeight;
       
-      // Calculate scroll progress based on viewport
+      // Calculate scroll progress based on how much of the timeline has been scrolled
       const elementTop = rect.top;
       const elementHeight = rect.height;
-      const elementBottom = elementTop + elementHeight;
       
-      // Start progress when element enters viewport from bottom
-      // Complete progress when element exits viewport from top
+      // Start progress when timeline enters viewport (bottom of viewport touches top of timeline)
+      // Complete progress when timeline exits viewport (top of viewport reaches bottom of timeline)
       let progress = 0;
       
-      if (elementBottom > 0 && elementTop < windowHeight) {
-        // Element is visible
-        if (elementTop <= 0) {
-          // Element top is above viewport
-          const visibleFromTop = Math.min(windowHeight, elementBottom);
-          progress = ((windowHeight - visibleFromTop) / elementHeight) * 100;
-        } else {
-          // Element top is in viewport
-          const visibleFromBottom = windowHeight - elementTop;
-          progress = (visibleFromBottom / elementHeight) * 100;
-        }
+      // Balanced approach - reach 100% when timeline is mostly scrolled but not too early
+      const elementBottom = elementTop + elementHeight;
+      
+      if (elementTop >= windowHeight) {
+        // Timeline is below viewport
+        progress = 0;
+      } else if (elementTop <= -elementHeight * 0.9) {
+        // Timeline is 90% scrolled past - reach 100% near the end
+        progress = 100;
+      } else {
+        // Calculate progress linearly from start to 90% scrolled
+        const startPoint = windowHeight; // Timeline starts entering
+        const endPoint = -elementHeight * 0.9; // 90% of timeline scrolled past
+        const totalDistance = startPoint - endPoint;
+        const currentDistance = startPoint - elementTop;
+        progress = Math.max(0, Math.min(100, (currentDistance / totalDistance) * 100));
       }
       
       // Ensure progress is between 0 and 100
@@ -201,7 +210,7 @@ export const Work = () => {
         type: "PROJECT",
         title: "Sorting algorithms analysis",
         subtitle: "Algorithms implementation in Python.",
-        description: "This project examines and compares various shortest path algorithms, with an emphasis on Dijkstra’s and Bellman-Ford algorithms, and explores the A* algorithm as a more advanced option.",
+        description: "This project examines and compares various shortest path algorithms, with an emphasis on Dijkstra's and Bellman-Ford algorithms, and explores the A* algorithm as a more advanced option.",
         technologies: ["Python", "MatPlotLib", "TimeIt", "NumPy", "Sorting Algorithms"],
         achievements: [
           "Implemented the 3 sorting algorithms and analyzed their performance in various scenarios, and compared their efficiency with different data sets.",

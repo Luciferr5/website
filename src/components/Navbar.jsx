@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from '../images/logo.png';
 
 export const Navbar = ({ menuOpen, setMenuOpen }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -19,6 +20,16 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
           element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
+    } else {
+      // If we're on a different page, navigate to home then scroll
+      navigate("/");
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 300);
     }
   };
 
@@ -59,13 +70,12 @@ export const Navbar = ({ menuOpen, setMenuOpen }) => {
             >
               Home
             </Link>
-            <Link
-              to="/"
+            <button
               onClick={() => handleSectionClick("test")}
               className="text-white hover:text-transparent transition-colors duration-500 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text"
             >
               About
-            </Link>
+            </button>
             <Link
               to="/work"
               className="text-white hover:text-transparent transition-colors duration-500 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text"
